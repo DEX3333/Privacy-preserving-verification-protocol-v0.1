@@ -241,6 +241,8 @@ Needs resubmission if:
 
 ## 4. Three Mock Examples
 
+These examples show different reviewer outcomes: accepted, accepted with clarification, and needs resubmission.
+
 ### 4.1 Validator Dashboard
 
 ```txt
@@ -330,7 +332,9 @@ Failure mode: Insufficient
 
 ---
 
-## 6. Copyable JSON Schema
+## 6. Copyable JSON Submission Template
+
+This is a practical JSON template for Task Node submissions, not a formal JSON Schema validator file.
 
 ```json
 {
@@ -536,7 +540,7 @@ Reviewer notes:
 
 ## 7. Dropdown/Form-Field Spec
 
-Implementation-ready fields for a submission or reviewer form.
+Implementation-ready fields for a future submission or reviewer form.
 
 | Field key | Label | Type | Required | Options |
 |---|---|---|---|---|
