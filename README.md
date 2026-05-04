@@ -1,0 +1,1 @@
+It applies to sensitive technical artifacts where public evidence must be enough for review, but full disclosure would expose private code, raw datasets, wallet identifiers, proprietary trading logic, client information, or operational security details.
