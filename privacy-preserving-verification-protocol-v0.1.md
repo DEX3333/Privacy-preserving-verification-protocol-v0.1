@@ -603,3 +603,89 @@ Dropdown option sets:
   ]
 }
 ```
+## Reviewer-Local Access Provisioning
+
+A reviewer-local check does not mean the reviewer receives unrestricted access to the contributor’s private system, repository, wallet, dataset, or trading environment.
+
+Reviewer-local access should be provisioned through a minimum-necessary verification package.
+
+### Preferred access pattern
+
+The contributor prepares a separate reviewer-only package that contains only the material needed to verify the public claim.
+
+This package may include:
+
+- a sanitized export
+- a read-only artifact
+- a synthetic or reduced dataset
+- a compiled build instead of source code
+- a screen-recorded walkthrough
+- a hash-verifiable file bundle
+- a notebook with private parameters removed
+- a spreadsheet copy with sensitive rows, wallets, formulas, or client fields masked
+- a signed statement explaining what was withheld and why
+
+The reviewer should never need access to:
+
+- private keys
+- seed phrases
+- live wallets
+- production credentials
+- admin panels
+- raw client data
+- full trading logic
+- live exchange accounts
+- internal deployment endpoints
+- the contributor’s active working repository
+
+### Access methods
+
+Reviewer-local checks may use one of the following access methods:
+
+| Method | Use case | OS boundary |
+|---|---|---|
+| Read-only private link | For screenshots, reports, dashboards, or exported spreadsheets | Link must not expose edit access, raw data, hidden tabs, comments, or metadata |
+| Sanitized artifact bundle | For notebooks, spreadsheets, reports, logs, or local builds | Bundle should be a copy, not the contributor’s live workspace |
+| Hash-verifiable package | For proving a private artifact existed at submission time | Reviewer verifies hash against the shared file without requiring public release |
+| Screen-share walkthrough | For artifacts too sensitive to transfer | Reviewer sees the artifact but does not receive files |
+| Recorded walkthrough | For asynchronous review | Recording must avoid secrets, wallets, endpoints, tabs, and hidden metadata |
+| Trusted reviewer enclave | For high-sensitivity work | Access is limited to a named reviewer or reviewer group under explicit review conditions |
+
+### Minimum safety rules
+
+- Provide a copy, never the live working environment.
+- Use read-only access wherever possible.
+- Remove secrets before sharing.
+- Use synthetic, reduced, or masked data when raw data is not necessary.
+- Do not share private keys, seed phrases, production credentials, or live wallet access under any condition.
+- Do not share full proprietary trading logic unless the task explicitly requires it and the contributor accepts that risk.
+- Limit access to a named reviewer or reviewer group.
+- Time-limit access when possible.
+- Record what was shared, with whom, and for what review purpose.
+- Revoke access after review is complete.
+
+### Reviewer responsibility
+
+The reviewer’s job is not to extract the contributor’s private edge. The reviewer’s job is to confirm that the public claim is supported by enough private evidence to justify acceptance.
+
+The reviewer should confirm:
+
+1. The private artifact exists.
+2. The private artifact matches the public claim.
+3. The public redacted evidence accurately represents the private artifact.
+4. The contributor did not expose unnecessary sensitive material.
+5. The withheld material is justified by the stated privacy boundary.
+
+### Rejection standard
+
+A submission should be rejected or sent back for resubmission if reviewer-local access requires any of the following:
+
+- private keys
+- seed phrases
+- live wallet access
+- production credentials
+- raw client data unrelated to the claim
+- full proprietary trading logic unrelated to the claim
+- unrestricted repo access
+- admin access to infrastructure
+- access to the contributor’s personal machine or active workspace
